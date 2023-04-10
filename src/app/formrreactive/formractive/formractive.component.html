@@ -1,0 +1,76 @@
+<div class="col-lg-8 col-md-8 left">
+  <form name="Enquiry" #Enquiry="ngForm" [formGroup]="myForm" (ngSubmit)="onSubmit(Enquiry)">
+    <div class="form-group">
+      <label>FirstName</label>
+      <input type="text" formControlName="firstName" class="form-control" placeholder="Enter FirstName*"
+        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+        <div *ngIf="f.firstName.errors.required" style="color:red">FirstName is required</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label>LastName</label>
+      <input type="text" formControlName="lastName" class="form-control" placeholder="Enter LastName*"
+        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+        <div *ngIf="f.lastName.errors.required" style="color:red">LastName is required</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" formControlName="email" class="form-control" placeholder="Enter Email Id*"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required" style="color:red">Email is required</div>
+        <div *ngIf="f.email.errors.email" style="color:red">Email must be a valid email address</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" formControlName="phone" class="form-control" placeholder="Enter Phone*"
+        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+        <div *ngIf="f.phone.errors.required" style="color:red">Phone is required</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label>Company</label>
+      <input type="text" formControlName="company" class="form-control" placeholder="Enter Company*"
+        [ngClass]="{ 'is-invalid': submitted && f.company.errors }" />
+      <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+        <div *ngIf="f.company.errors.required" style="color:red">Company is required</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label>Gender</label>
+      <input type="radio" formControlName="gender" class="form-control" /> Male &nbsp;&nbsp;
+      <input type="radio" formControlName="gender" class="form-control"  /> Female
+    </div><br>
+    <div class="form-group">
+      <label>DOB</label>
+      <input type="date" formControlName="dob" class="form-control" />
+    </div><br>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" formControlName="password" class="form-control" placeholder="Enter Password*"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required" style="color:red">Please Enter Password</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label>ConfirmPassword</label>
+      <input type="text" formControlName="confirmpassword" class="form-control" placeholder="Enter ConfirmPassword*"
+        [ngClass]="{ 'is-invalid': submitted && f.confirmpassword.errors }" />
+      <div *ngIf="submitted && f.confirmpassword.errors" class="invalid-feedback">
+        <div *ngIf="f.confirmpassword.errors.required" style="color:red">Please Enter ConfirmPassword</div>
+      </div>
+    </div><br>
+    <div class="form-group">
+      <button class="btn submit">Register &nbsp; <span *ngIf="submitted" class="spinner-border spinner-border-sm"
+          style="color: #a59292;" role="status" aria-hidden="true"></span></button>
+          &nbsp;&nbsp;
+      <button class="button" onclick="onCancel()">Cancel &nbsp;</button>
+    </div>
+  </form>
+</div>
